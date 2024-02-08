@@ -21,13 +21,6 @@ public class Program
         HttpContent content = new StringContent(data, Encoding.UTF8, "application/json");
         HttpResponseMessage response = client.PutAsync(url, content).Result;
 
-        if (response.IsSuccessStatusCode)
-        {
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
-        }
-        else
-        {
-            Console.WriteLine(response.Content.ReadAsStringAsync().Result);
-        }
+        Console.WriteLine(response.Content.ReadAsStringAsync().Result);
     }
 }
